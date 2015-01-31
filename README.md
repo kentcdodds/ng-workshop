@@ -12,4 +12,4 @@ AngularJS tutorial. Goes through many useful concepts. See
 
 ## Next Step
 
-Run `git checkout filters-custom -f`
+Run `git checkout controllers -f`
