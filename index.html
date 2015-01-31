@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head lang="en">
   <meta charset="UTF-8">
   <title>ng-workshop</title>
@@ -16,6 +16,28 @@
 
 <div class="container">
   <h1>ng-workshop</h1>
+  Template examples:
+  <div>
+
+    <strong>I can</strong>
+    <ul>
+      <li>do a lot of javascripty things {{5*2}}</li>
+      <li>do ternary operations {{'foo' === 'foo' ? 'foo' : 'bar'}}</li>
+      <li>use filters for data display (more on that later)</li>
+      <li>interact with variables on the scope (more on that later)</li>
+    </ul>
+    <strong>I can't</strong>
+    <ul>
+      <li>access window: {{window.alert('Hey!')}}</li>
+      <li>create functions</li>
+      <li>do flow control stuff (like loops, and if statements)</li>
+      <li>do regex</li>
+    </ul>
+    <strong>I don't</strong>
+    <ul>
+      <li>throw errors with undefined or null: {{undefined() && null['sweet!']}}</li>
+    </ul>
+  </div>
 </div>
 
 
