@@ -2,8 +2,13 @@
 .idea
 
 # dependencies
-node_modules
+# node_modules #removed so gh-pages works.
+# added specifically because they're not needed for gh-pages
+node_modules/http-server
+node_modules/livereload
+
 
 # other
 npm-debug.log
 .DS_Store
+
