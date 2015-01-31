@@ -1,0 +1,9 @@
+# ide files
+.idea
+
+# dependencies
+node_modules
+
+# other
+npm-debug.log
+.DS_Store
