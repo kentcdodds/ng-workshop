@@ -11,36 +11,36 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
 
 </head>
-<body>
+<body ng-controller="FeedbackCtrl as vm">
 
 
 <div class="container">
   <h1>
     Feedback
-    <span ng-if="workshop.attendee">from {{workshop.attendee}}</span>
+    <span ng-if="vm.workshop.attendee">from {{vm.workshop.attendee}}</span>
   </h1>
 
-  <form>
+  <form ng-submit="vm.sendFeedback(vm.workshop)">
     <div class="form-group">
       <label for="name">Name</label>
-      <input ng-model="workshop.attendee" type="text" class="form-control" id="name"/>
+      <input ng-model="vm.workshop.attendee" type="text" class="form-control" id="name"/>
     </div>
     <div class="form-group">
       <label for="score">Score</label>
-      <input  ng-model="workshop.score" type="number" min="1" max="10" class="form-control" id="score"/>
+      <input  ng-model="vm.workshop.score" type="number" min="1" max="10" class="form-control" id="score"/>
     </div>
     <div class="form-group">
       <label for="feedback">Feedback</label>
-      <textarea ng-model="workshop.feedback"
-                placeholder="{{workshop.score ? 'Why the ' + workshop.score + '?' : ''}}"
+      <textarea ng-model="vm.workshop.feedback"
+                placeholder="{{vm.workshop.score ? 'Why the ' + vm.workshop.score + '?' : ''}}"
                 id="feedback"
                 class="form-control"
                 rows="3"></textarea>
       <p class="help-block">Please be kind and honest :-)</p>
     </div>
-    <div ng-if="workshop.feedback">
+    <div ng-if="vm.workshop.feedback">
       <strong>Preview</strong>
-      <div>{{workshop.feedback | amazing}}</div>
+      <div>{{vm.workshop.feedback | amazing}}</div>
     </div>
     <check-human is-human="client.isHuman"></check-human>
     <button ng-disabled="!client.isHuman" type="submit" class="btn btn-default">Send Feedback</button>
@@ -55,6 +55,7 @@
 <script src="app.js"></script>
 <script src="check-human.js"></script>
 <script src="amazing.js"></script>
+<script src="FeedbackCtrl.js"></script>
 
 <!-- add livereload script so we don't have to refresh our browser on changes -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
