@@ -6,6 +6,7 @@
 # added specifically because they're not needed for gh-pages
 node_modules/http-server
 node_modules/livereload
+node_modules/.bin
 
 
 # other
