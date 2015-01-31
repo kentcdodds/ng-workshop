@@ -12,4 +12,9 @@ AngularJS tutorial. Goes through many useful concepts. See
 
 ## Next Step
 
-Run `git checkout angularfire -f`
+You're all done! Now build something awesome. Here are some awesome resources:
+
+- https://angularjs.org
+- https://docs.angularjs.org/guide
+- https://egghead.io
+- https://www.ng-newsletter.com
