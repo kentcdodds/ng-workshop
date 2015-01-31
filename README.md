@@ -3,8 +3,6 @@
 AngularJS tutorial. Goes through many useful concepts. See
 [these slides](https://slides.com/kentcdodds/intro-to-angularjs) for more information.
 
-AngularJS tutorial. Goes through many useful concepts. See https://slides.com/kentcdodds/intro-to-angularjs for more information.
-
 ## Getting Started
 
 1. Install node or iojs
