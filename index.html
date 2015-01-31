@@ -9,6 +9,7 @@
 
   <!-- Bring in Bootstrap css so things look nice by default -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+  <style>.ng-cloak{display:none;}</style>
 
 </head>
 <body ng-controller="FeedbackCtrl as vm">
@@ -24,7 +25,7 @@
   <a href="http://slides.com/kentcdodds/intro-to-angularjs">the Slides</a>
 </div>
 
-<div class="container" style="margin-bottom:100px">
+<div class="container" style="margin-bottom:100px" class="ng-cloak">
   <h1>
     Feedback
     <span ng-if="vm.workshop.attendee">from {{vm.workshop.attendee}}</span>
