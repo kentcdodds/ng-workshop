@@ -42,6 +42,18 @@
     <button ng-disabled="!client.isHuman" type="submit" class="btn btn-default">Send Feedback</button>
   </form>
 
+  <hr />
+
+  <h1>Filters!</h1>
+  It's all about formatting for display <br/>
+  Number: {{3.9568987876 | number:3}} <br/>
+  Date: {{1288323623006 | date:'MM/dd/yyyy h:mma'}} <br/>
+  Currency: {{1.15 | currency}} <br/>
+  Lowercase: {{'LOWERCASE' | lowercase}} <br/>
+  Uppercase: {{'UPPERCASE' | uppercase}} <br/>
+  JSON: <pre>{{{a: 'a', b: 23, c: false} | json}}</pre>
+  And more!
+
 </div>
 
 

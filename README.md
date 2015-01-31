@@ -14,4 +14,4 @@ AngularJS tutorial. Goes through many useful concepts. See https://slides.com/ke
 
 ## Next Step
 
-Run `git checkout filters -f`
+Run `git checkout filters-custom -f`
