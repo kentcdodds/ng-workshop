@@ -1,1 +1,6 @@
-angular.module('app', []);
+(function() {
+  'use strict';
+  var app = angular.module('app', []);
+
+  app.constant('Firebase', Firebase);
+})();

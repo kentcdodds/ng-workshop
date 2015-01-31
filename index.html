@@ -20,19 +20,20 @@
     <span ng-if="vm.workshop.attendee">from {{vm.workshop.attendee}}</span>
   </h1>
 
-  <form ng-submit="vm.sendFeedback(vm.workshop)">
+  <form ng-submit="vm.sendFeedback(vm.workshop)" name="vm.feedbackForm">
     <div class="form-group">
       <label for="name">Name</label>
-      <input ng-model="vm.workshop.attendee" type="text" class="form-control" id="name"/>
+      <input ng-model="vm.workshop.attendee" type="text" required class="form-control" id="name"/>
     </div>
     <div class="form-group">
       <label for="score">Score</label>
-      <input  ng-model="vm.workshop.score" type="number" min="1" max="10" class="form-control" id="score"/>
+      <input  ng-model="vm.workshop.score" type="number" required min="1" max="10" class="form-control" id="score"/>
     </div>
     <div class="form-group">
       <label for="feedback">Feedback</label>
       <textarea ng-model="vm.workshop.feedback"
                 placeholder="{{vm.workshop.score ? 'Why the ' + vm.workshop.score + '?' : ''}}"
+                required
                 id="feedback"
                 class="form-control"
                 rows="3"></textarea>
@@ -43,7 +44,7 @@
       <div>{{vm.workshop.feedback | amazing}}</div>
     </div>
     <check-human is-human="client.isHuman"></check-human>
-    <button ng-disabled="!client.isHuman"
+    <button ng-disabled="!client.isHuman || vm.feedbackForm.$invalid"
             type="submit"
             class="btn btn-primary">
       Send Feedback
@@ -57,11 +58,17 @@
 <!-- bring in angular -->
 <script src="node_modules/angular/angular.js"></script>
 
+
+<!-- bring in third parties -->
+<script src="firebase-fix.js"></script>
+<script src="node_modules/firebase/lib/firebase-web.js"></script>
+
 <!-- bring in our own stuff -->
 <script src="app.js"></script>
 <script src="check-human.js"></script>
 <script src="amazing.js"></script>
 <script src="FeedbackCtrl.js"></script>
+<script src="Feedback.js"></script>
 
 <!-- add livereload script so we don't have to refresh our browser on changes -->
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

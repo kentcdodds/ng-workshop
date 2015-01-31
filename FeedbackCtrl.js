@@ -3,7 +3,7 @@
 
   angular.module('app').controller('FeedbackCtrl', FeedbackCtrl);
 
-  function FeedbackCtrl() {
+  function FeedbackCtrl(Feedback) {
     var vm = this;
 
     // variable assignment
@@ -14,7 +14,8 @@
 
     //function declaration
     function sendFeedback(workshop) {
-      alert(JSON.stringify(workshop, null, 2));
+      Feedback.sendFeedback(workshop);
+      alert('Thanks for the ' + workshop.score + '!');
     }
   }
 })();
