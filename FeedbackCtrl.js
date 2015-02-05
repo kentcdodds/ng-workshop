@@ -11,6 +11,36 @@
     var messageSync = $firebase(chatRef);
     vm.messages = messageSync.$asArray();
     vm.workshop = {score: 10};
+    vm.workshopFields = [
+      {
+        type: 'input',
+        key: 'attendee',
+        templateOptions: {
+          label: 'Name',
+          placeholder: 'Hello world!',
+          required: true
+        }
+      },
+      {
+        type: 'number',
+        key: 'score',
+        templateOptions: {
+          label: 'Score',
+          required: true
+        }
+      },
+      {
+        type: 'textarea',
+        key: 'feedback',
+        expressionProperties: {
+          'templateOptions.placeholder': "model.score ? 'Why the ' + model.score + '?' : ''"
+        },
+        templateOptions: {
+          required: true,
+          label: 'Feedback'
+        }
+      }
+    ];
 
     // function assignment
     vm.sendFeedback = sendFeedback;
