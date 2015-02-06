@@ -1,0 +1,7 @@
+<div class="AdminCtrl">
+  <div>
+    <p ng-repeat="item in vm.feedback">
+      <button class="btn btn-danger btn-sm" ng-disabled="!item.id" ng-click="vm.removeFeedback(item, $index)">Delete</button> {{item.attendee}} | {{item.score}} | {{item.feedback}}
+    </p>
+  </div>
+</div>

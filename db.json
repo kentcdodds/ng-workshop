@@ -1,0 +1,15 @@
+{
+  "feedback": [
+    {
+      "attendee": "Kent C. Dodds",
+      "score": 10,
+      "feedback": "This was amazing!"
+    },
+    {
+      "attendee": "Kent C. Dodds",
+      "score": 10,
+      "feedback": "This is a test!",
+      "id": "bd6af1c6-135e-4d8c-8182-31907a17bd81"
+    }
+  ]
+}

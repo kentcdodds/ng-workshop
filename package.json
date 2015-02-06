@@ -10,7 +10,8 @@
     "bootstrap": "^3.3.2",
     "firebase": "^2.1.2",
     "angular-formly": "3.0.0-beta.1",
-    "angular-formly-templates-bootstrap": "formly-js/angular-formly-templates-bootstrap#308f166973712f7d94efec72b35cfc5e2de6a071"
+    "angular-formly-templates-bootstrap": "formly-js/angular-formly-templates-bootstrap#308f166973712f7d94efec72b35cfc5e2de6a071",
+    "angular-ui-router": "0.2.13"
   },
   "devDependencies": {
     "http-server": "^0.7.4",
