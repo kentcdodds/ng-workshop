@@ -1,0 +1,23 @@
+<div>
+  <h1>Chat in real time with everyone else!</h1>
+
+  <div class="form-group">
+    <label for="chatName">Name</label>
+    <input ng-model="vm.user.name" type="text" class="form-control" id="chatName"/>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <input ng-model="vm.message" ng-disabled="!vm.user.name" ng-keydown="vm.addMessage($event)" type="text" class="form-control" id="message"/>
+  </div>
+
+  <div scroll-glue class="well well-large" style="max-height:300px;overflow-y:scroll;font-size:130%;margin-top:20px;">
+    <div ng-repeat="message in vm.messages">
+      <strong>{{message.from}}</strong>: {{message.body}}
+    </div>
+    <small ng-if="!vm.messages.length" class="text-muted">
+      There are no messages yet. Go ahead and send something!
+    </small>
+  </div>
+
+  <img src="firebase-logo.png">
+</div>

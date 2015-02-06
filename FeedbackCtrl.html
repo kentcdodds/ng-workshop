@@ -1,0 +1,17 @@
+<div class="FeedbackCtrl">
+  <h1>
+    Feedback
+    <span ng-if="vm.workshop.attendee">from {{vm.workshop.attendee}}</span>
+  </h1>
+
+  <form ng-submit="vm.sendFeedback(vm.workshop)" name="vm.feedbackForm">
+    <formly-form model="vm.workshop" fields="vm.workshopFields">
+      <check-human is-human="client.isHuman"></check-human>
+      <button ng-disabled="!client.isHuman || vm.feedbackForm.$invalid"
+              type="submit"
+              class="btn btn-primary">
+        Send Feedback
+      </button>
+    </formly-form>
+  </form>
+</div>

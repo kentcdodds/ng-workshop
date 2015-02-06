@@ -11,53 +11,9 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
 
 </head>
-<body ng-controller="FeedbackCtrl as vm">
+<body>
 
-
-<div class="container" style="margin-bottom:100px">
-  <h1>
-    Feedback
-    <span ng-if="vm.workshop.attendee">from {{vm.workshop.attendee}}</span>
-  </h1>
-
-  <hr/>
-
-  <h2>New Form</h2>
-  <form ng-submit="vm.sendFeedback(vm.workshop)" name="vm.feedbackForm">
-    <formly-form model="vm.workshop" fields="vm.workshopFields">
-      <check-human is-human="client.isHuman"></check-human>
-      <button ng-disabled="!client.isHuman || vm.feedbackForm.$invalid"
-              type="submit"
-              class="btn btn-primary">
-        Send Feedback
-      </button>
-    </formly-form>
-  </form>
-
-  <hr />
-  <h1>Chat in real time with everyone else!</h1>
-
-  <div class="form-group">
-    <label for="chatName">Name</label>
-    <input ng-model="vm.workshop.attendee" type="text" class="form-control" id="chatName"/>
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <input ng-model="vm.message" ng-disabled="!vm.workshop.attendee" ng-keydown="vm.addMessage($event)" type="text" class="form-control" id="message"/>
-  </div>
-
-  <div scroll-glue class="well well-large" style="max-height:300px;overflow-y:scroll;font-size:130%;margin-top:20px;">
-    <div ng-repeat="message in vm.messages">
-      <strong>{{message.from}}</strong>: {{message.body}}
-    </div>
-    <small ng-if="!vm.messages.length" class="text-muted">
-      There are no messages yet. Go ahead and send something!
-    </small>
-  </div>
-
-  <img src="firebase-logo.png">
-
-</div>
+<div ui-view class="container" style="margin-bottom:100px"></div>
 
 
 
@@ -73,6 +29,7 @@
 
 <script src="node_modules/angular-formly/dist/formly.js"></script>
 <script src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
 <!-- bring in our own stuff -->
 <script src="app.js"></script>
@@ -81,9 +38,7 @@
 <script src="FeedbackCtrl.js"></script>
 <script src="Feedback.js"></script>
 <script src="FirebaseUtil.js"></script>
-
-<!-- add livereload script so we don't have to refresh our browser on changes -->
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="ChatCtrl.js"></script>
 
 </body>
 </html>
