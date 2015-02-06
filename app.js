@@ -39,4 +39,8 @@
   app.constant('Firebase', Firebase);
   app.constant('API_URL', 'http://localhost:3000/');
   app.value('user', {});
+
+  app.run(function($templateCache) {
+    window.$templateCache = $templateCache;
+  });
 })();

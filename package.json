@@ -18,8 +18,8 @@
     "livereload": "^0.3.6"
   },
   "scripts": {
-    "start": "node_modules/.bin/http-server -c-1 > /dev/null & node_modules/.bin/livereload . -i 200 > /dev/null",
-    "test": "node_modules/karma/bin/karma start"
+    "start": "node node_modules/.bin/http-server -c-1 > /dev/null & node_modules/.bin/livereload . -i 200 > /dev/null",
+    "test": "node node_modules/karma/bin/karma start"
   },
   "repository": {
     "type": "git",

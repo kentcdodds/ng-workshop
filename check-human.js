@@ -6,7 +6,12 @@
   function checkHuman() {
     return {
       restrict: 'E',
-      templateUrl: 'check-human.html',
+      template: [
+        '<div class="check-human form-group">',
+          '<label for="checkHumanAnswer">Are You Human? What is {{vm.rand1}} plus {{vm.rand2}}?</label>',
+          '<input ng-model="vm.answer" ng-change="vm.check(vm.answer)" type="text" class="form-control" id="checkHumanAnswer"/>',
+        '</div>'
+      ].join(' '),
       scope: {
         valid: '=isHuman'
       },
