@@ -10,7 +10,11 @@
     var chatRef = FirebaseUtil.getFirebaseRef('chat');
     var messageSync = $firebase(chatRef);
     vm.messages = messageSync.$asArray();
-    vm.workshop = {score: 10};
+    vm.workshop = {
+      attendee: 'Kent C. Dodds',
+      score: 10
+    };
+    vm.message = 'Default message';
 
     // function assignment
     vm.sendFeedback = sendFeedback;
